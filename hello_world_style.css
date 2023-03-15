@@ -7,7 +7,7 @@ h1 {
      display: inline-block;
 }
     
-}
+
 
 #red {
    color:red;
@@ -18,7 +18,7 @@ h1 {
 }
 
 
-/* adapted from here: https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
+/* adapted from here: https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
 
 /* Add a black background color to the top navigation */
 .topnav {
