@@ -4,6 +4,8 @@ h1 {
      background-color: purple;
      border-radius:15px;
      padding:10px;
+     display: inline-block;
+}
     
 }
 
@@ -14,3 +16,15 @@ h1 {
 #green {
   color:green;
 }
+
+
+/* adapted from here: https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #059862;
+  color:white;
+  overflow: hidden;
+}
+
+
