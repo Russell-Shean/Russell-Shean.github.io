@@ -1,0 +1,16 @@
+h1 { 
+     font-size:40px;
+     color:green;
+     background-color: purple;
+     border-radius:15px;
+     padding:10px;
+    
+}
+
+#red {
+   color:red;
+}
+
+#green {
+  color:green;
+}
