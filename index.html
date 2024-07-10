@@ -31,7 +31,34 @@
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
 
-    <!-- Define the map code 
+
+    
+    <!-- code taken from: https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
+     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+
+
+
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="https://russell-shean.github.io/geocoding-instructions.html">Geocoding Instructions</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div> 
+
+<h1>Hello World</h1>
+<p> This is the website's landing page. It's a work in progress, but we've got a navigation bar!<br>Next up an external css file! </p>
+<span id="green">This bit's green</span> <span id="red">, and this bit's red!</span>
+
+
+<!-- Let's try adding a leaflet map -->
+
+    <div id="map"></div>
+
+        <!-- Define the map code 
     source: https://leafletjs.com/examples/quick-start/
     -->
 <script>
@@ -80,31 +107,6 @@ map.on('click', onMapClick);
   
   
 </script>
-    
-    <!-- code taken from: https://www.w3schools.com/howto/howto_js_topnav_responsive.asp -->
-     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-
-
-
-<div class="topnav" id="myTopnav">
-  <a href="#home" class="active">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href="https://russell-shean.github.io/geocoding-instructions.html">Geocoding Instructions</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div> 
-
-<h1>Hello World</h1>
-<p> This is the website's landing page. It's a work in progress, but we've got a navigation bar!<br>Next up an external css file! </p>
-<span id="green">This bit's green</span> <span id="red">, and this bit's red!</span>
-
-
-<!-- Let's try adding a leaflet map -->
-
-    <div id="map"></div>
    
   </body>
   
