@@ -1,0 +1,24 @@
+name: Render quarto and move to top level
+on:
+  push:
+    branches:
+      - main
+
+  # run on request (via button in actions menu)
+  workflow_dispatch:
+      
+jobs:
+  deploy:
+    name: Deploy to shinyapps
+
+    # allow skipping deployment for commits containing '[automated]' or '[no-deploy]' in the commit message
+    if: "!contains(github.event.head_commit.message, '[automated]') && !contains(github.event.head_commit.message, '[no-deploy]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: quarto-dev/quarto-actions/setup@v2
+      - uses: quarto-dev/quarto-actions/render@v2
+      # copy all the rendered files into the main directory
+      # there has to be a less stupid way to do this....
+      - run: |
+          cp -a _site/.  
