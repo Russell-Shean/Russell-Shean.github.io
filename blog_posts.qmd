@@ -1,0 +1,13 @@
+---
+title: "Blog"
+listing: 
+  contents: blog_posts 
+  type: grid 
+  sort: "date desc" 
+  categories: true 
+format:
+  html: 
+    comments: false
+---
+
+Long(er) form descriptions of some of the things I've worked on
