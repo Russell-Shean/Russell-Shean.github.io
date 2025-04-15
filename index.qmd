@@ -1,7 +1,28 @@
 ---
 title: "Russell Shean"
+format: 
+  html:
+    comments: false
+about: 
+  template: solana
+  image: www/linkedin_photo2-modified.png
+  image-width: 7em
+  image-shape: round
+  links: 
+    - icon: github
+      text: Github
+      href: https://github.com/Russell-Shean
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/Russell-Shean/
+    - icon: bsky
+      text: Bluesky
+      href: https://bsky.app/profile/rshean.bsky.social
+    - icon: journal-medical
+      text: Scholar
+      href: https://scholar.google.com/citations?user=ztjg1TgAAAAJ
 ---
 
-This is an initial test of a quarto website
+## Hello! 👋
 
-Ich bin Russ :)
+Hi I'm Russ! 
