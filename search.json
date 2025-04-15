@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "blog_posts.html",
+    "href": "blog_posts.html",
+    "title": "Blog",
     "section": "",
-    "text": "About this site. Test?"
+    "text": "Long(er) form descriptions of some of the things I’ve worked on\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -12,5 +12,12 @@
     "title": "Russell Shean",
     "section": "",
     "text": "This is an initial test of a quarto website\nIch bin Russ :)"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site. Test?"
   }
 ]
