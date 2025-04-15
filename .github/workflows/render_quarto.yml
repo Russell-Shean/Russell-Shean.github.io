@@ -22,3 +22,6 @@ jobs:
       # there has to be a less stupid way to do this....
       - run: |
           cp -a _site/. .
+          
+      # commit back to repo
+      - uses: stefanzweifel/git-auto-commit-action@v5
