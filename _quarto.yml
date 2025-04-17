@@ -4,6 +4,8 @@ project:
 website:
   title: "Russell Shean"
   navbar:
+    background: primary
+    search: true
     left:
       - href: index.qmd
         text: Home
@@ -13,13 +15,18 @@ website:
       - href: projects.qmd
         text: Projects
 
+    right:
+      - icon: github
+        href: https://github.com/Russell-Shean/
+        aria-label: GitHub
+      
+
 format:
   html:
     theme:
-      - cosmo
-      - brand
+     dark: darkly
+     light: cosmo
     css: styles.css
     toc: true
-
 
 
