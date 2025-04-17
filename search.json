@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "blog_posts.html",
-    "href": "blog_posts.html",
-    "title": "Blog",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Long(er) form descriptions of some of the things I’ve worked on\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "About this site. Test?"
   },
   {
     "objectID": "index.html",
@@ -21,10 +21,10 @@
     "text": "Hi I’m Russ!"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "blog_posts.html",
+    "href": "blog_posts.html",
+    "title": "Blog",
     "section": "",
-    "text": "About this site. Test?"
+    "text": "Long(er) form descriptions of some of the things I’ve worked on\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
