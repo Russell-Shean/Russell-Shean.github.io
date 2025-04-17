@@ -6,7 +6,7 @@ format:
 about: 
   template: solana
   image: www/linkedin_photo2-modified.png
-  image-width: 7em
+  image-width: 14em
   image-shape: round
   links: 
     - icon: github
