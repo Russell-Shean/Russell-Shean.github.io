@@ -20,7 +20,10 @@ about:
       href: https://bsky.app/profile/rshean.bsky.social
     - icon: journal-medical
       text: Scholar
-      href: https://scholar.google.com/citations?user=ztjg1TgAAAAJ
+      href: https://scholar.google.com/citations?user=ztjg1TgAAAAJ  
+    - icon: gmail
+      text: email
+      href: mailto:russshean@gmail.com?subject=Schedule consultation&body=Hi Russ,I would like to schedule a free 30 minute consultation to chat about projects we could colaborate on. Best, 
 ---
 
 ## Hello! 👋
