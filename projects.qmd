@@ -1,0 +1,32 @@
+---
+title: "Projects"
+format:
+    closeread-html:
+        include-in-header: assets/before.html
+        theme: [cosmo, assets/styles.scss]
+        smooth-scroll: true
+        code-fold: true
+        cr-section:
+                layout: sidebar-left
+        cr-style:
+                section-background-color: "#0b0d15"
+                narrative-text-color-sidebar: "#fdfdfd"
+---     
+:::::::: cr-section
+## Example Projects  
+Here are some projects I've been working on recently. Keep scrolling to explore! 
+
+:::::::: cr-section
+### Shiny Dashboards      
+Here are some shiny dashboards I've built. Shiny is a web development framework for R and python.      
+    
+:::::::: cr-section
+## Bigfoot Sightings dashboard
+This dashboard looks at bigfoot sightings in Washington State.      
+
+:::::::: cr-section
+<iframe src="https://russellshean.shinyapps.io/bigfoot_sightings/" title="Bigfoot Sightings in Washington State">        
+
+## Links
+<a href="https://github.com/Russell-Shean/bigfoot_sightings ">Source Code</a>       
+<a href="https://www.bfro.net/GDB">Data source</a>

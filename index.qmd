@@ -32,14 +32,5 @@ Hi I'm Russ! I'm a freelance software engineer focusing on data engineering, dat
       
 Keep scrolling to learn more about me, see some example projects and get in touch.        
 
-## Example Projects        
-
-### 1. Shiny Dashboards    
-Here's a data visualization dashboard I build using R's web development framework <a href="https://shiny.posit.co/">shiny</a>. The dashboard looks at bigfoot sightings in Washington State.      
-
-<iframe src="https://russellshean.shinyapps.io/bigfoot_sightings/" title="Bigfoot Sightings in Washington State">        
-
-Source Code: https://github.com/Russell-Shean/bigfoot_sightings       
-Data source: https://www.bfro.net/GDB
 
 
