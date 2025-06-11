@@ -1,5 +1,4 @@
 ---
-title: "Projects"
 format:
     closeread-html:
         include-in-header: assets/before.html
@@ -8,9 +7,6 @@ format:
         code-fold: true
         cr-section:
                 layout: sidebar-left
-        cr-style:
-                section-background-color: "#0b0d15"
-                narrative-text-color-sidebar: "#fdfdfd"
 ---     
 :::::::: cr-section
 ## Example Projects  
