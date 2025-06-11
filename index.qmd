@@ -15,13 +15,13 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/Russell-Shean/
-    - icon: bsky
+    - icon: bluesky
       text: Bluesky
       href: https://bsky.app/profile/rshean.bsky.social
     - icon: journal-medical
       text: Scholar
       href: https://scholar.google.com/citations?user=ztjg1TgAAAAJ  
-    - icon: gmail
+    - icon: envelope-fill
       text: email
       href: mailto:russshean@gmail.com?subject=I'd like to schedule a consultation&body=Hi Russ,<br>I would like to schedule a free 30 minute consultation to chat about projects we could colaborate on. <br><br>Best,<br>
 ---
