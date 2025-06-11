@@ -1,1 +1,9 @@
 /* css styles */
+
+
+/* Increase the size of the shiny dashboard iframes */
+.shiny-iframe-container {
+  
+  height:500px;
+  width:150%;
+}
