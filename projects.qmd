@@ -1,14 +1,18 @@
-## Example Projects  
+---
+
+---
+
+# Example Projects  
 Here are some projects I've been working on recently. Keep scrolling to explore! 
 
-### Shiny Dashboards      
+## Shiny Dashboards      
 Here are some shiny dashboards I've built. Shiny is a web development framework for R and python.      
     
 
-## Bigfoot Sightings dashboard
+### Bigfoot Sightings dashboard
 This dashboard looks at bigfoot sightings in Washington State.      
 
-<div id="bigfoots-container">
+<div id="bigfoots-container" class="shiny-iframe-container">
 <iframe src="https://russellshean.shinyapps.io/bigfoot_sightings/" title="Bigfoot Sightings in Washington State">   
 </div>
 
