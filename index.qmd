@@ -28,4 +28,6 @@ about:
 
 ## Hello! 👋
 
-Hi I'm Russ! 
+Hi I'm Russ! I'm a freelance software engineer focusing on data engineering, data science, and automation.       
+      
+Keep scrolling to learn more about me, see some example projects and get in touch. 
