@@ -23,7 +23,7 @@ about:
       href: https://scholar.google.com/citations?user=ztjg1TgAAAAJ  
     - icon: envelope-fill
       text: email
-      href: mailto:russshean@gmail.com?subject=I'd like to schedule a consultation&body=Hi Russ,<br>I would like to schedule a free 30 minute consultation to chat about projects we could colaborate on. <br><br>Best,<br>
+      href: mailto:russshean@gmail.com?subject=I'd like to schedule a consultation&body=Hi Russ,\nI would like to schedule a free 30 minute consultation to chat about projects we could collaborate on. <br><br>Best,<br>
 ---
 
 ## Hello! 👋
