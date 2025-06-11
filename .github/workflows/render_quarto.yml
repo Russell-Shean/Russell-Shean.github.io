@@ -19,7 +19,7 @@ jobs:
       - uses: quarto-dev/quarto-actions/setup@v2
       - run: |
           quarto --version
-          quarto add qmd-lab/closeread
+          quarto add qmd-lab/closeread --no-prompt
       - uses: quarto-dev/quarto-actions/render@v2
       # copy all the rendered files into the main directory
       # there has to be a less stupid way to do this....
