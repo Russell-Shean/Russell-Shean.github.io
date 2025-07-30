@@ -8,6 +8,7 @@ theme:
      light: cosmo
 ---
 
+```{=html}
 <style>
 
 #DataTables_Table_0_wrapper {
@@ -17,10 +18,11 @@ theme:
 }
 
 </style>
+```
 
 ## About this Code Sample
 
-Quarto is an amazing tool and I love it, but I view it primarily as a tool for presentation and visualization and haven’t used it much for data pipelines in production. Most of my work over the last three years has been in a data engineering and DevOps support role for other epidemiologists who build the visualizations and, consequently, I have relatively few recent quarto code samples in my portfolio. 
+Quarto is an amazing tool and I love it, but I view it primarily as a tool for presentation and visualization and haven’t used it much for data pipelines in production. Most of my work over the last three years has been in a data engineering and DevOps support role for other epidemiologists who build the visualizations and, consequently, I have relatively few recent quarto code samples in my portfolio.
 
 Here's a simple quarto code sample that I adopted from something I worked on a few years ago. Because it’s not very recent, I've also included links to code samples from projects I've worked on more recently that didn't use quarto.
 
@@ -28,15 +30,15 @@ Here's a simple quarto code sample that I adopted from something I worked on a f
 
 ## Background
 
-For many types of spatial analysis require precise point locations, however many public health datasets only provide an address which needs to be geocoded first to get a precise point. 
+For many types of spatial analysis require precise point locations, however many public health datasets only provide an address which needs to be geocoded first to get a precise point.
 
 It is important to maintain the privacy and security of public health data for legal and ethical reasons. Therefore, when geocoding we should avoid sending patient address, encrypted to 3rd party online servers whenever possible.
 
-This document demonstrates how to setup an offline, open-source, and free geocoding database locally allowing epidemiologists to geocode using R securely behind their own firewalls. The geocoding procedure is also free and not subject to API rate limits. 
+This document demonstrates how to setup an offline, open-source, and free geocoding database locally allowing epidemiologists to geocode using R securely behind their own firewalls. The geocoding procedure is also free and not subject to API rate limits.
 
 ## Required software
 
-1.  Windows 
+1.  Windows
 2.  Windows Subsystem for Linux (WSL) or Hyper-V
 3.  Docker
 4.  R
@@ -54,9 +56,7 @@ This document demonstrates how to setup an offline, open-source, and free geocod
 install.packages("tmaptools")
 ```
 
-
-
-3. For example data, we’ll use the Rhode Island state capitol. This is a public demonstration, so instead of using an actual patient address, we'll use the address of a public building.  Run the following code in R:
+3.  For example data, we’ll use the Rhode Island state capitol. This is a public demonstration, so instead of using an actual patient address, we'll use the address of a public building. Run the following code in R:
 
 ```{r}
 
@@ -77,9 +77,7 @@ Then use the geocode_OSM() function from the `tmaptools` package to geocode the 
 tmaptools::geocode_OSM(RI_state_capitol)
 ```
 
-
-
-This works, yay! The problem is that the default behavior is to send the address to the online server. From the documentation we can see that the addresses are sent to the server at `https://nominatim.openstreetmap.org`. That means the addresses are being sent out into the public internet unencrypted and could potentially be intercepted or diverted. 
+This works, yay! The problem is that the default behavior is to send the address to the online server. From the documentation we can see that the addresses are sent to the server at `https://nominatim.openstreetmap.org`. That means the addresses are being sent out into the public internet unencrypted and could potentially be intercepted or diverted.
 
 Here are the function arguments and default parameters taken from the documentation:
 
@@ -101,8 +99,7 @@ geocode_OSM(
 
 ### Demonstration of Offline Geocoding
 
-
-Fortunately,  there’s also the option to send the addresses to a local Nominatim server. Here's the description of the server argument taken from the documentation
+Fortunately, there’s also the option to send the addresses to a local Nominatim server. Here's the description of the server argument taken from the documentation
 
 ```{r}
 #| eval: false
@@ -110,12 +107,11 @@ server   OpenStreetMap Nominatim server name. Could also be a local OSM Nominati
 
 ```
 
+So, if we can setup a "a local OSM Nominatim server" we should be able to geocode without sending any address data over the internet. Open Street Maps allows people to download and setup an offline geocoding database. Nominatim documentation doesn’t have install instructions for windows, but there is an option to run a local OSM nominatim server in a docker container on windows. Here's how:
 
-So if we can setup a "a local OSM Nominatim server" we should be able to geocode without sending any address data over the internet. Open Street Maps allows people to download and setup an offline geocoding database. Nominatim documentation doesn’t have install instructions for windows, but there is an option to run a local OSM nominatim server in a docker container on windows. Here's how:
+1.  Install Docker Desktop for Windows using these [instructions](https://docs.docker.com/desktop/windows/install/). Make sure to also install WSL or Hyper-V. For this example I used WSL.
 
-1. Install Docker Desktop for Windows using these [instructions](https://docs.docker.com/desktop/windows/install/). Make sure to also install WSL or Hyper-V. For this example I used WSL.
-
-2. After docker desktop is installed and running, open a command prompt window and enter the following. (Depending on what you use for your RStudio terminal, you may also be able to enter the code in the terminal tab in the bottom left corner. I haven't tested it, but PowerShell should also work. Linux requires sudo for Docker).    
+2.  After docker desktop is installed and running, open a command prompt window and enter the following. (Depending on what you use for your RStudio terminal, you may also be able to enter the code in the terminal tab in the bottom left corner. I haven't tested it, but PowerShell should also work. Linux requires sudo for Docker).
 
 ```{r}
 #| eval: false
@@ -125,6 +121,7 @@ docker run -it --rm \
 -p 8080:8080 \
 --name nominatim mediagis/nominatim:4.0
 ```
+
 The command is taken from the following [documentation](https://github.com/mediagis/nominatim-docker) and downloads the Nominatim image from docker and starts a container running off the image. The command I used is identical to the documentation except that I changed the two data source urls to only include data from Rhode Island. You will need to change these two URLS for the location which you wish to geocode:
 
 ```{r}
@@ -132,11 +129,14 @@ The command is taken from the following [documentation](https://github.com/media
 PBF_URL=https://download.geofabrik.de/north-america/us/rhode-island-latest.osm.pbf 
 REPLICATION_URL=https://download.geofabrik.de/north-america/us-northeast-update
 ```
+
 The docker container is exposed on port 8080 using the following argument
+
 ```{r}
 #| eval: false
 -p 8080:8080
 ```
+
 The download and install process takes a bit of time and you should see quite a bit of text flash across your terminal. If at the end you see the following, everything installed correctly and the geocoding database is ready to use:
 
 ```{r}
@@ -169,12 +169,11 @@ tmaptools::geocode_OSM("24 Beacon St, Boston, MA 02133",
 
 ```
 
-
-It works! We can geocode offline for addresses in Rhode Island. The failure to geocode the address in Massachusets is expected behavior because we only included Rhode Island data when we fetched the docker image and started the container. 
+It works! We can geocode offline for addresses in Rhode Island. The failure to geocode the address in Massachusets is expected behavior because we only included Rhode Island data when we fetched the docker image and started the container.
 
 ### Batch Geocoding
 
-Multiple addresses can also be geocoded in batches. Let's try geocoding the three addresses from above all at once. 
+Multiple addresses can also be geocoded in batches. Let's try geocoding the three addresses from above all at once.
 
 ```{r}
 
@@ -187,7 +186,7 @@ lots_of_points <- tmaptools::geocode_OSM(lots_of_addresses,
 
 ```
 
-Here's a table showing the results from the batch geocoding. If we were working with actual patient data we could easily join these results back to a the original dataframe that the patient addresses came from. 
+Here's a table showing the results from the batch geocoding. If we were working with actual patient data we could easily join these results back to a the original dataframe that the patient addresses came from.
 
 ```{r}
 
@@ -199,7 +198,8 @@ DT::datatable(lots_of_points,
 ```
 
 ### Create maps
-The geocoded points can be used for further spatial analysis or to create maps and other visualizations. Here's a very simple example of mapping. We'll start by creating a map of Rhode Island.  
+
+The geocoded points can be used for further spatial analysis or to create maps and other visualizations. Here's a very simple example of mapping. We'll start by creating a map of Rhode Island.
 
 ```{r}
 #|echo: false
@@ -287,38 +287,36 @@ A: This is likely an issue with your organization's firewall. When I tried this 
 
 Q: What is Docker?
 
-A: It is a tool for distributing software and managing dependencies, by creating isolated environments and processes into containers. Here’s a [link](https://docs.docker.com/get-started/overview/) to Docker's documentation. 
+A: It is a tool for distributing software and managing dependencies, by creating isolated environments and processes into containers. Here’s a [link](https://docs.docker.com/get-started/overview/) to Docker's documentation.
 
 Q: Where can I find the code used to create this quarto file?
 
-A: [Here]() 
+A: [Here](www.russellshean.com/geocoding-instructions/code_sample.qmd)
 
 <hr>
+
 The End!
-
-
-
 
 # Additional Code Samples
 
 Here are links to a few other projects I've worked on that didn't use quarto:
 
-1. Shiny Dashboard       
-    Here's a link to an [example shiny dashboard](https://github.com/Russell-Shean/bigfoot_sightings/tree/main). I used a publicly available dataset of bigfoot sightings, but the same techniques could be used to visualize actual health data. The project shows examples of integrating [custom CSS](https://github.com/Russell-Shean/bigfoot_sightings/blob/main/www/css/bigfoot_dashboard_styles.css) and [custom Javascript](https://github.com/Russell-Shean/bigfoot_sightings/blob/main/www/move_remove_functions.js) into shiny dashboards as well as using [GitHub Actions](https://github.com/Russell-Shean/bigfoot_sightings/blob/main/.github/workflows/publish-shinyapps-io.yaml) to automatically publish the dashboard every time there’s a commit to the main branch.           
-       
-   The project unfortunately does not use shiny modules, however I have started to use them in a different (incomplete) [shiny dashboard](https://github.com/Russell-Shean/mapasaurus/tree/main/inst/route-explorer-app)
+1.  Shiny Dashboard\
+    Here's a link to an [example shiny dashboard](https://github.com/Russell-Shean/bigfoot_sightings/tree/main). I used a publicly available dataset of bigfoot sightings, but the same techniques could be used to visualize actual health data. The project shows examples of integrating [custom CSS](https://github.com/Russell-Shean/bigfoot_sightings/blob/main/www/css/bigfoot_dashboard_styles.css) and [custom Javascript](https://github.com/Russell-Shean/bigfoot_sightings/blob/main/www/move_remove_functions.js) into shiny dashboards as well as using [GitHub Actions](https://github.com/Russell-Shean/bigfoot_sightings/blob/main/.github/workflows/publish-shinyapps-io.yaml) to automatically publish the dashboard every time there’s a commit to the main branch.
 
-2. Python Package       
-    I realize that the role I'm applying for will use primarily R, but I still wanted to briefly highlight a project I'm working on that uses two other tools commonly used by epidemiologists: Power BI and Python. [This python package](https://www.russellshean.com/powerbpy/) is still a work in progress but it contains a set of python functions that allow users to create Power BI dashboards by running python code instead of opening Power BI desktop.          
-        
-   The project shows examples of using GitHub actions to automatically [update documentation](https://github.com/Russell-Shean/powerbpy/blob/main/.github/workflows/publish-quarto-docs.yml) and automatically [publish to PyPI](https://github.com/Russell-Shean/powerbpy/blob/main/.github/workflows/python-publish.yml) whenever there's a new release. 
+    The project unfortunately does not use shiny modules, however I have started to use them in a different (incomplete) [shiny dashboard](https://github.com/Russell-Shean/mapasaurus/tree/main/inst/route-explorer-app)
 
-3. Batch Scripts    
+2.  Python Package\
+    I realize that the role I'm applying for will use primarily R, but I still wanted to briefly highlight a project I'm working on that uses two other tools commonly used by epidemiologists: Power BI and Python. [This python package](https://www.russellshean.com/powerbpy/) is still a work in progress but it contains a set of python functions that allow users to create Power BI dashboards by running python code instead of opening Power BI desktop.
+
+    The project shows examples of using GitHub actions to automatically [update documentation](https://github.com/Russell-Shean/powerbpy/blob/main/.github/workflows/publish-quarto-docs.yml) and automatically [publish to PyPI](https://github.com/Russell-Shean/powerbpy/blob/main/.github/workflows/python-publish.yml) whenever there's a new release.
+
+3.  Batch Scripts\
     Here's a [link](https://github.com/Russell-Shean/batch_scripts) to a batch script I wrote at the Washington State Department of Health to automatically create an R environment and run R data processing pipelines. The batch script was written so that we could share our R data processing pipelines with other teams and guarantee that they had the same software environment on their computer as we had on ours. Reproducible code requires reproducible environments!
-   
-   Here's a [link](https://youtu.be/jVxq9utjcn8?si=u04q_3XLtRW_LDtQ) to a talk I gave about the batch scripts project. 
 
-   This project was later adapted to a larger, (unfortunately non-public), project I worked on to standardize how we created and managed cloud resources across GitHub, Databricks, Azure, and Power BI Service. The technique, (without any code samples), is described in more detail [here](https://media.licdn.com/dms/image/v2/D5622AQGZfAFNdmfIuA/feedshare-shrink_2048_1536/B56ZVuI7lxGsAo-/0/1741309591040?e=1756944000&v=beta&t=K5YEn07jYg1G-Cplnd3ZRoXzvOAdEi7zGjjS4UYLXWY). 
+    Here's a [link](https://youtu.be/jVxq9utjcn8?si=u04q_3XLtRW_LDtQ) to a talk I gave about the batch scripts project.
 
-4. GitHub Repositories     
-    There are other unfinished projects on my GitHub such as a [bot](https://github.com/Russell-Shean/random-city-bot) built with R that posts  maps of randomw cities to Bluesky and an [R package](https://github.com/Russell-Shean/mapasaurus) to process .gpx files similar to how Strava does. The projects are not what I'd consider portfolio ready, but they're public so feel free to browse :) 
+    This project was later adapted to a larger, (unfortunately non-public), project I worked on to standardize how we created and managed cloud resources across GitHub, Databricks, Azure, and Power BI Service. The technique, (without any code samples), is described in more detail [here](https://media.licdn.com/dms/image/v2/D5622AQGZfAFNdmfIuA/feedshare-shrink_2048_1536/B56ZVuI7lxGsAo-/0/1741309591040?e=1756944000&v=beta&t=K5YEn07jYg1G-Cplnd3ZRoXzvOAdEi7zGjjS4UYLXWY).
+
+4.  GitHub Repositories\
+    There are other unfinished projects on my GitHub such as a [bot](https://github.com/Russell-Shean/random-city-bot) built with R that posts maps of randomw cities to Bluesky and an [R package](https://github.com/Russell-Shean/mapasaurus) to process .gpx files similar to how Strava does. The projects are not what I'd consider portfolio ready, but they're public so feel free to browse :)
