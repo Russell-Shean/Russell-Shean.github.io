@@ -291,7 +291,7 @@ A: It is a tool for distributing software and managing dependencies, by creating
 
 Q: Where can I find the code used to create this quarto file?
 
-A: [Here](www.russellshean.com/geocoding-instructions/code_sample.qmd)
+A: [Here](https://github.com/Russell-Shean/Russell-Shean.github.io/blob/main/blog_posts/geocoding-instructions/code_sample.qmd)
 
 <hr>
 
