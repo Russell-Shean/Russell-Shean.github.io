@@ -22,9 +22,9 @@ theme:
 
 ## About this Code Sample
 
-Quarto is an amazing tool and I love it, but I view it primarily as a tool for presentation and visualization and haven’t used it much for data pipelines in production. Most of my work over the last three years has been in a data engineering and DevOps support role for other epidemiologists who build the visualizations and, consequently, I have relatively few recent quarto code samples in my portfolio.
+Quarto is an amazing tool and I love it, but I view it primarily as a tool for presentation and visualization and haven’t used it much for data pipelines in production. Most of my work over the last three years has been in a data engineering and DevOps role supporting other epidemiologists who build visualizations. Consequently, I have relatively few recent quarto code samples in my portfolio.
 
-Here's a simple quarto code sample that I adopted from something I worked on a few years ago. Because it’s not very recent, I've also included links to code samples from projects I've worked on more recently that didn't use quarto.
+Here's a simple quarto code sample that I adapted from something I worked on a few years ago. Because it’s not very recent, I've also included links to code samples from projects I've worked on more recently that didn't use quarto.
 
 <hr>
 
