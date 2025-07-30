@@ -1,8 +1,8 @@
 name: Render quarto and move to top level
 on:
-  #push:
-    #branches:
-      #- main
+  push:
+    branches:
+      - main
 
   # run on request (via button in actions menu)
   workflow_dispatch:
