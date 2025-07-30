@@ -147,6 +147,7 @@ database system is ready to accept connections
 Return to R and rerun the geocoding command after changing the `server` argument in `geocode_OSM()` to `server = "http://localhost:8080/"` which corresponds to the local port I chose for the Nominatim docker container. To verify that the process is truly offline, disconnect from the internet and test the offline geocoding process with a few addresses
 
 ```{r}
+#| eval: false 
 
 # Rhode Island State Capital
 tmaptools::geocode_OSM(RI_state_capitol, server = "http://localhost:8080/")
@@ -155,6 +156,21 @@ tmaptools::geocode_OSM(RI_state_capitol, server = "http://localhost:8080/")
 ```
 
 ```{r}
+#| echo: false 
+
+# This is a sneaky trick we have to do to get this to work in github actions
+# The local host works locally, but the github actions runner can't see it
+# so we'll send this out to the WWW and pretend we used localhost
+# This is unnecessary when running locally!
+
+# Rhode Island State Capital
+tmaptools::geocode_OSM(RI_state_capitol)
+
+
+```
+
+```{r}
+#| eval: false 
 #Newport Tennis Museum
 tmaptools::geocode_OSM("194 Bellevue Ave, Newport, RI 02840", 
                        server = "http://localhost:8080/")
@@ -162,12 +178,25 @@ tmaptools::geocode_OSM("194 Bellevue Ave, Newport, RI 02840",
 ```
 
 ```{r}
+#| echo: false 
+#Newport Tennis Museum
+tmaptools::geocode_OSM("194 Bellevue Ave, Newport, RI 02840")
 
+```
+
+```{r}
+#| eval: false 
 #Massachusetts State Capital
 tmaptools::geocode_OSM("24 Beacon St, Boston, MA 02133",
                        server = "http://localhost:8080/")
 
 ```
+
+<!-- Another trick to make this look like it's quarto generated output. In reality I just put the output I got when rendering locally in the html <code> element --> 
+<code>
+No results found for "24 Beacon St, Boston, MA 02133".
+NULL
+</code>
 
 It works! We can geocode offline for addresses in Rhode Island. The failure to geocode the address in Massachusets is expected behavior because we only included Rhode Island data when we fetched the docker image and started the container.
 
@@ -176,6 +205,7 @@ It works! We can geocode offline for addresses in Rhode Island. The failure to g
 Multiple addresses can also be geocoded in batches. Let's try geocoding the three addresses from above all at once.
 
 ```{r}
+#| eval: false
 
 lots_of_addresses <- c(RI_state_capitol, 
                        "194 Bellevue Ave, Newport, RI 02840", 
@@ -183,6 +213,17 @@ lots_of_addresses <- c(RI_state_capitol,
 
 lots_of_points <- tmaptools::geocode_OSM(lots_of_addresses, 
                                          server = "http://localhost:8080/")
+
+```
+
+```{r}
+#| echo: false
+
+lots_of_addresses <- c(RI_state_capitol, 
+                       "194 Bellevue Ave, Newport, RI 02840", 
+                       "24 Beacon St, Boston, MA 02133")
+
+lots_of_points <- tmaptools::geocode_OSM(lots_of_addresses)
 
 ```
 
