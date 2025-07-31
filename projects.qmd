@@ -1,3 +1,7 @@
+This section is currently under construction.
+
+
+<!--
 # Example Projects  
 Here are some projects I've been working on recently. Keep scrolling to explore! 
 
@@ -15,3 +19,5 @@ This dashboard looks at bigfoot sightings in Washington State.
 ## Links
 <a href="https://github.com/Russell-Shean/bigfoot_sightings ">Source Code</a>       
 <a href="https://www.bfro.net/GDB">Data source</a>
+
+-->

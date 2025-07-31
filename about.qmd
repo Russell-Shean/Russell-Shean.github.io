@@ -2,4 +2,4 @@
 title: "About"
 ---
 
-About this site. Test?
+This section is currently under construction. 
