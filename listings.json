@@ -1,6 +1,8 @@
 [
   {
     "listing": "/blog_posts.html",
-    "items": []
+    "items": [
+      "/blog_posts/geocoding-instructions/code_sample.html"
+    ]
   }
 ]
