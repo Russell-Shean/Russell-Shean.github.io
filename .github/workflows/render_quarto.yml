@@ -46,7 +46,7 @@ jobs:
           mesa-common-dev
       
       # Install Dependent R packages
-      - run: Rscript -e 'install.packages(c("rmarkdown", "knitr", "tmap","tmaptools","sf"))'
+      - run: Rscript -e 'install.packages(c("DT", "rmarkdown", "knitr", "tmap","tmaptools","sf"))'
 
       
       - uses: quarto-dev/quarto-actions/setup@v2
