@@ -2,7 +2,8 @@
   {
     "listing": "/blog_posts.html",
     "items": [
-      "/blog_posts/geocoding-instructions/code_sample.html"
+      "/blog_posts/install-line-ubuntu/ubuntu-line-workarounds.html",
+      "/blog_posts/geocoding-instructions/offline-geocoding.html"
     ]
   }
 ]
