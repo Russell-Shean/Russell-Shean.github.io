@@ -15,9 +15,6 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/Russell-Shean/
-    - icon: bluesky
-      text: Bluesky
-      href: https://bsky.app/profile/rshean.bsky.social
     - icon: journal-medical
       text: Scholar
       href: https://scholar.google.com/citations?user=ztjg1TgAAAAJ  
