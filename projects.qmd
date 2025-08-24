@@ -1,7 +1,6 @@
 This section is currently under construction.
 
 
-<!--
 # Example Projects  
 Here are some projects I've been working on recently. Keep scrolling to explore! 
 
@@ -20,4 +19,25 @@ This dashboard looks at bigfoot sightings in Washington State.
 <a href="https://github.com/Russell-Shean/bigfoot_sightings ">Source Code</a>       
 <a href="https://www.bfro.net/GDB">Data source</a>
 
--->
+
+Additional Code Samples
+
+Shiny Dashboard      
+Here's a link to an example shiny dashboard. I used a publicly available dataset of bigfoot sightings, but the same techniques could be used to visualize actual health data. The project shows examples of integrating custom CSS and custom Javascript into shiny dashboards as well as using GitHub Actions to automatically publish the dashboard every time there’s a commit to the main branch.
+
+The project unfortunately does not use shiny modules, however I have started to use them in a different (incomplete) shiny dashboard
+
+Python Package    
+ This python package is still a work in progress but it contains a set of python functions that allow users to create Power BI dashboards by running python code instead of opening Power BI desktop.
+
+The project shows examples of using GitHub actions to automatically update documentation and automatically publish to PyPI whenever there's a new release.
+
+Batch Scripts     
+Here's a link to a batch script I wrote at the Washington State Department of Health to automatically create an R environment and run R data processing pipelines. The batch script was written so that we could share our R data processing pipelines with other teams and guarantee that they had the same software environment on their computer as we had on ours. Reproducible code requires reproducible environments!
+
+Here's a link to a talk I gave about the batch scripts project.
+
+This project was later adapted to a larger, (unfortunately non-public), project I worked on to standardize how we created and managed cloud resources across GitHub, Databricks, Azure, and Power BI Service. The technique, (without any code samples), is described in more detail here.
+
+GitHub Repositories      
+There are other unfinished projects on my GitHub such as a bot built with R that posts maps of random cities to Bluesky and an R package to process .gpx files similar to how Strava does. The projects are not what I'd consider portfolio ready, but they're public so feel free to browse :)

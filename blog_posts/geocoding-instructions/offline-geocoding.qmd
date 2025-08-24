@@ -1,5 +1,5 @@
 ---
-title: "Code Sample"
+title: "Offline Geocoding for Public Health"
 author: "Russell Shean"
 format: html
 editor: visual
@@ -20,17 +20,9 @@ theme:
 </style>
 ```
 
-## About this Code Sample
-
-Quarto is an amazing tool and I love it, but I view it primarily as a tool for presentation and visualization and haven’t used it much for data pipelines in production. Most of my work over the last three years has been in a data engineering and DevOps role supporting other epidemiologists who build visualizations. Consequently, I have relatively few recent quarto code samples in my portfolio.
-
-Here's a simple quarto code sample that I adapted from something I worked on a few years ago. Because it’s not very recent, I've also included links to code samples from projects I've worked on more recently that didn't use quarto.
-
-<hr>
-
 ## Background
 
-For many types of spatial analysis require precise point locations, however many public health datasets only provide an address which needs to be geocoded first to get a precise point.
+Many types of spatial analysis require precise point locations, however many public health datasets only provide an address which needs to be geocoded first to get a precise point.
 
 It is important to maintain the privacy and security of public health data for legal and ethical reasons. Therefore, when geocoding we should avoid sending patient address, encrypted to 3rd party online servers whenever possible.
 
@@ -192,11 +184,9 @@ tmaptools::geocode_OSM("24 Beacon St, Boston, MA 02133",
 
 ```
 
-<!-- Another trick to make this look like it's quarto generated output. In reality I just put the output I got when rendering locally in the html <code> element --> 
-<code>
-No results found for "24 Beacon St, Boston, MA 02133".
-NULL
-</code>
+<!-- Another trick to make this look like it's quarto generated output. In reality I just put the output I got when rendering locally in the html <code> element -->
+
+<code> No results found for "24 Beacon St, Boston, MA 02133". NULL </code>
 
 It works! We can geocode offline for addresses in Rhode Island. The failure to geocode the address in Massachusets is expected behavior because we only included Rhode Island data when we fetched the docker image and started the container.
 
@@ -337,27 +327,3 @@ A: [Here](https://github.com/Russell-Shean/Russell-Shean.github.io/blob/main/blo
 <hr>
 
 The End!
-
-# Additional Code Samples
-
-Here are links to a few other projects I've worked on that didn't use quarto:
-
-1.  Shiny Dashboard\
-    Here's a link to an [example shiny dashboard](https://github.com/Russell-Shean/bigfoot_sightings/tree/main). I used a publicly available dataset of bigfoot sightings, but the same techniques could be used to visualize actual health data. The project shows examples of integrating [custom CSS](https://github.com/Russell-Shean/bigfoot_sightings/blob/main/www/css/bigfoot_dashboard_styles.css) and [custom Javascript](https://github.com/Russell-Shean/bigfoot_sightings/blob/main/www/move_remove_functions.js) into shiny dashboards as well as using [GitHub Actions](https://github.com/Russell-Shean/bigfoot_sightings/blob/main/.github/workflows/publish-shinyapps-io.yaml) to automatically publish the dashboard every time there’s a commit to the main branch.
-
-    The project unfortunately does not use shiny modules, however I have started to use them in a different (incomplete) [shiny dashboard](https://github.com/Russell-Shean/mapasaurus/tree/main/inst/route-explorer-app)
-
-2.  Python Package\
-    I realize that the role I'm applying for will use primarily R, but I still wanted to briefly highlight a project I'm working on that uses two other tools commonly used by epidemiologists: Power BI and Python. [This python package](https://www.russellshean.com/powerbpy/) is still a work in progress but it contains a set of python functions that allow users to create Power BI dashboards by running python code instead of opening Power BI desktop.
-
-    The project shows examples of using GitHub actions to automatically [update documentation](https://github.com/Russell-Shean/powerbpy/blob/main/.github/workflows/publish-quarto-docs.yml) and automatically [publish to PyPI](https://github.com/Russell-Shean/powerbpy/blob/main/.github/workflows/python-publish.yml) whenever there's a new release.
-
-3.  Batch Scripts\
-    Here's a [link](https://github.com/Russell-Shean/batch_scripts) to a batch script I wrote at the Washington State Department of Health to automatically create an R environment and run R data processing pipelines. The batch script was written so that we could share our R data processing pipelines with other teams and guarantee that they had the same software environment on their computer as we had on ours. Reproducible code requires reproducible environments!
-
-    Here's a [link](https://youtu.be/jVxq9utjcn8?si=u04q_3XLtRW_LDtQ) to a talk I gave about the batch scripts project.
-
-    This project was later adapted to a larger, (unfortunately non-public), project I worked on to standardize how we created and managed cloud resources across GitHub, Databricks, Azure, and Power BI Service. The technique, (without any code samples), is described in more detail [here](https://media.licdn.com/dms/image/v2/D5622AQGZfAFNdmfIuA/feedshare-shrink_2048_1536/B56ZVuI7lxGsAo-/0/1741309591040?e=1756944000&v=beta&t=K5YEn07jYg1G-Cplnd3ZRoXzvOAdEi7zGjjS4UYLXWY).
-
-4.  GitHub Repositories\
-    There are other unfinished projects on my GitHub such as a [bot](https://github.com/Russell-Shean/random-city-bot) built with R that posts maps of random cities to Bluesky and an [R package](https://github.com/Russell-Shean/mapasaurus) to process .gpx files similar to how Strava does. The projects are not what I'd consider portfolio ready, but they're public so feel free to browse :)
