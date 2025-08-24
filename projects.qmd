@@ -12,7 +12,11 @@ Here are some shiny dashboards I've built. Shiny is a web development framework 
 This dashboard looks at bigfoot sightings in Washington State.      
 
 <div id="bigfoots-container" class="shiny-iframe-container">
-<iframe id="bigfoots-iframe" class="shiny-iframe" src="https://russellshean.shinyapps.io/bigfoot_sightings/" title="Bigfoot Sightings in Washington State">   
+<iframe id="bigfoots-iframe" class="shiny-iframe" src="https://russellshean.shinyapps.io/bigfoot_sightings/" title="Bigfoot Sightings in Washington State">
+</iframe>
+
+<!-- Iframes need a closing tag!!! https://stackoverflow.com/a/27545787 -->
+
 </div>      
      
 ## Links     
