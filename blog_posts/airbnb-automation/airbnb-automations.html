@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Russell Shean">
 
-<title>Blog – Russell Shean</title>
+<title>Open-source Airbnb Reservation Management Automation – Russell Shean</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +24,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e16dd29f819a46fcdaa82e3575888691.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-70251fee9d101ca39d3791353faa8e21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-bc185b5c5bdbcb35c2eb49d8a876ef70.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-e16dd29f819a46fcdaa82e3575888691.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-70251fee9d101ca39d3791353faa8e21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,67 +70,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
@@ -301,7 +242,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Russell Shean</span>
     </a>
   </div>
@@ -312,19 +253,19 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog_posts.html" aria-current="page"> 
+    <a class="nav-link" href="../../blog_posts.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html"> 
+    <a class="nav-link" href="../../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
@@ -347,21 +288,37 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#open-source-automation-of-reservation-management-for-airbnb-using-gmail-line-messaging-and-github-actions" id="toc-open-source-automation-of-reservation-management-for-airbnb-using-gmail-line-messaging-and-github-actions" class="nav-link active" data-scroll-target="#open-source-automation-of-reservation-management-for-airbnb-using-gmail-line-messaging-and-github-actions">Open-source automation of reservation management for Airbnb using Gmail, Line messaging, and Github Actions</a></li>
+  <li><a href="#step-1-get-emails-from-gmail" id="toc-step-1-get-emails-from-gmail" class="nav-link" data-scroll-target="#step-1-get-emails-from-gmail">Step 1: Get emails from Gmail</a>
+  <ul class="collapse">
+  <li><a href="#google-credentials" id="toc-google-credentials" class="nav-link" data-scroll-target="#google-credentials">Google Credentials</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Blog</h1>
+<h1 class="title">Open-source Airbnb Reservation Management Automation</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Russell Shean </p>
+          </div>
+  </div>
     
   
     
@@ -372,73 +329,43 @@ window.Quarto = {
 </header>
 
 
-<p>Long(er) form descriptions of some of the things I’ve worked on</p>
+<style>
+
+#DataTables_Table_0_wrapper {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+
+}
+
+</style>
+<section id="open-source-automation-of-reservation-management-for-airbnb-using-gmail-line-messaging-and-github-actions" class="level2">
+<h2 class="anchored" data-anchor-id="open-source-automation-of-reservation-management-for-airbnb-using-gmail-line-messaging-and-github-actions">Open-source automation of reservation management for Airbnb using Gmail, Line messaging, and Github Actions</h2>
+<p>I recently had a client ask me to help to automate the management of several of his Airbnb properties. He wanted to automatically generate invoices and a cleaning schedule. He also wanted the cleaning schedule and a reminder message sent daily to the cleaner.</p>
+<p>This blog post won’t cover the entire process I set up because aspects of it are specific to my client’s business, but I’ll give enough of an overview of all the pieces that I hope you’ll be able to recreate the general process for your own Airbnb business.</p>
+<p>The process can be divided roughly into the following pieces:</p>
+<ol type="1">
+<li>Get Airbnb email notifications from gmail using the gmail API</li>
+<li>Parse the emails to extract all the data we need</li>
+<li>Create custom cleaning schedules and invoices</li>
+<li>Upload the schedules to google drive using the drive API</li>
+<li>Send a message to the house cleaner using the Line messaging API</li>
+<li>Automate and schedule the entire process using Github Actions</li>
+</ol>
+<p>The project uses a mix of R, python and a tiny bit of bash. All the APIs and cloud platforms I use are either free or have free tiers. With the exception of whatever Airbnb charges hosts, all the software tools and cloud platforms should be free to use.</p>
+</section>
+<section id="step-1-get-emails-from-gmail" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-get-emails-from-gmail">Step 1: Get emails from Gmail</h2>
+<p>Airbnb doesn’t provide public access to their API. I’m not sure why, but I’m guessing that they sell access to it to 3rd party software developers who then build hosting tools and turn around and sell them to hosts. As an individual software developer you can’t get access to it even if you wanted to pay for it. (Which I don’t hahaha).</p>
+<p>Because Airbnb doesn’t let us get the data using an API, I had to find a different way to get data about reservations and payments. Fortunately, Airbnb sends email notices to hosts that contain most of the information we need including checkin and checkout times, number of guests, payments, modifications, and cancellations. Unlike Airbnb has a number of different APIs available to us.</p>
+<section id="google-credentials" class="level3">
+<h3 class="anchored" data-anchor-id="google-credentials">Google Credentials</h3>
+<p>The trickiest part of getting the emails from gmail is setting up the credentials correctly. One common method of authentication is to use the credentials of a signed in a user, which would work fine for something you want to run manually on your computer, but we knew we wanted to eventually schedule and completely automate the process by putting it on github actions.</p>
 
 
+</section>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1756117490990" data-listing-reading-time-sort="7" data-listing-word-count-sort="1208">
-<a href="./blog_posts/install-line-ubuntu/ubuntu-line-workarounds.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="blog_posts/install-line-ubuntu/wine-windows-verion-question.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Run Line Messaging on Ubuntu Desktop
-</h5>
-<div class="card-text listing-description delink">
-Line is a free messaging software similiar to products such as Whatsapp, Facebook Messenger or Signal. It is commonly used in Taiwan and therefore I receive a lot of…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-Russell Shean
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1756117490989" data-listing-reading-time-sort="10" data-listing-word-count-sort="1812">
-<a href="./blog_posts/geocoding-instructions/offline-geocoding.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top"><img src="blog_posts/geocoding-instructions/offline-geocoding_files/figure-html/unnamed-chunk-21-1.png" style="height: 150px;"  class="thumbnail-image card-img"/></p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Offline Geocoding for Public Health
-</h5>
-<div class="card-text listing-description delink">
-Many types of spatial analysis require precise point locations, however many public health datasets only provide an address which needs to be geocoded first to get a precise…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-Russell Shean
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1756117490936" data-listing-reading-time-sort="3" data-listing-word-count-sort="415">
-<a href="./blog_posts/airbnb-automation/airbnb-automations.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Open-source Airbnb Reservation Management Automation
-</h5>
-<div class="card-text listing-description delink">
-I recently had a client ask me to help to automate the management of several of his Airbnb properties. He wanted to automatically generate invoices and a cleaning schedule.…
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-Russell Shean
-</div>
-</div>
-</div>
-</div></a>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right

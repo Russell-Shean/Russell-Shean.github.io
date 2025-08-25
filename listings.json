@@ -3,7 +3,8 @@
     "listing": "/blog_posts.html",
     "items": [
       "/blog_posts/install-line-ubuntu/ubuntu-line-workarounds.html",
-      "/blog_posts/geocoding-instructions/offline-geocoding.html"
+      "/blog_posts/geocoding-instructions/offline-geocoding.html",
+      "/blog_posts/airbnb-automation/airbnb-automations.html"
     ]
   }
 ]
