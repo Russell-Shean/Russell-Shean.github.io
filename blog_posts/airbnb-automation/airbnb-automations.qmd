@@ -1,0 +1,48 @@
+---
+title: "Open-source Airbnb Reservation Management Automation"
+author: "Russell Shean"
+format: html
+editor: visual
+theme:
+     dark: darkly
+     light: cosmo
+---
+
+```{=html}
+<style>
+
+#DataTables_Table_0_wrapper {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+
+}
+
+</style>
+```
+
+## Open-source automation of reservation management for Airbnb using Gmail, Line messaging, and Github Actions
+
+I recently had a client ask me to help to automate the management of several of his Airbnb properties. He wanted to automatically generate invoices and a cleaning schedule. He also wanted the cleaning schedule and a reminder message sent daily to the cleaner.
+
+This blog post won't cover the entire process I set up because aspects of it are specific to my client's business, but I'll give enough of an overview of all the pieces that I hope you'll be able to recreate the general process for your own Airbnb business.
+
+The process can be divided roughly into the following pieces:
+
+1.  Get Airbnb email notifications from gmail using the gmail API
+2.  Parse the emails to extract all the data we need
+3.  Create custom cleaning schedules and invoices
+4.   Upload the schedules to google drive using the drive API
+5.  Send a message to the house cleaner using the Line messaging API
+6.  Automate and schedule the entire process using Github Actions
+
+The project uses a mix of R, python and a tiny bit of bash. All the APIs and cloud platforms I use are either free or have free tiers. With the exception of whatever Airbnb charges hosts, all the software tools and cloud platforms should be free to use.
+
+## Step 1: Get emails from Gmail
+
+Airbnb doesn't provide public access to their API. I'm not sure why, but I'm guessing that they sell access to it to 3rd party software developers who then build hosting tools and turn around and sell them to hosts. As an individual software developer you can't get access to it even if you wanted to pay for it. (Which I don't hahaha).
+
+Because Airbnb doesn't let us get the data using an API, I had to find a different way to get data about reservations and payments. Fortunately, Airbnb sends email notices to hosts that contain most of the information we need including checkin and checkout times, number of guests, payments, modifications, and cancellations. Unlike Airbnb has a number of different APIs available to us.
+
+### Google Credentials
+
+The trickiest part of getting the emails from gmail is setting up the credentials correctly. One common method of authentication is to use the credentials of a signed in a user, which would work fine for something you want to run manually on your computer, but we knew we wanted to eventually schedule and completely automate the process by putting it on github actions.

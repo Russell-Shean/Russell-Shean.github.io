@@ -112,8 +112,7 @@ This \[link\](<https://desktop.line-scdn.net/win/new/LineInst.exe>) should alway
 
 I then tried to install the Line executable using Wine and almost immediately weird things started happening. Here's the command I ran
 
-```bash
-
+``` bash
 ```
 
 I tried clicking cancel to load the debugger
