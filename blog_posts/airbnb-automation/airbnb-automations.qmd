@@ -2,6 +2,7 @@
 title: "Open-source Airbnb Reservation Management Automation"
 author: "Russell Shean"
 format: html
+draft: true
 editor: visual
 theme:
      dark: darkly
