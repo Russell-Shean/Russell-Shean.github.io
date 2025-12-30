@@ -2,6 +2,7 @@
 title: "Run Line Messaging on Ubuntu Desktop"
 author: "Russell Shean"
 format: html
+draft: true
 editor: visual
 theme:
      dark: darkly
