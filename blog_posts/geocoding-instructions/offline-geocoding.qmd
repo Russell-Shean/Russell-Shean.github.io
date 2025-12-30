@@ -2,7 +2,7 @@
 title: "Offline Geocoding for Public Health"
 author: "Russell Shean"
 format: html
-draft: true
+draft: false
 editor: visual
 theme:
      dark: darkly
